@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="vip.App">
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <OnPlatform x:TypeArguments="x:String" x:Key="UbuntuFont">
+                <On Platform="Android" Value="Ubuntu-R.ttf#Ubuntu-R" />
+                <On Platform="UWP" Value="/Assets/Ubuntu-R.ttf#Ubuntu-R" />
+                <On Platform="iOS" Value="Ubuntu-R" />
+            </OnPlatform>
+
+           
+            
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

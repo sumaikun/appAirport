@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="vip.Login"
+     >
+    <ContentPage.Content>
+
+        <RelativeLayout>
+           
+
+            <Image Source="tombarrettunsplash.png" 
+                    RelativeLayout.WidthConstraint=
+                        "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                    RelativeLayout.HeightConstraint=
+                        "{ConstraintExpression Type=RelativeToParent, Property=Height}"
+                    Aspect="AspectFill"
+                        
+              />
+
+             <Grid RelativeLayout.WidthConstraint=
+                          "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                        RelativeLayout.HeightConstraint=
+                          "{ConstraintExpression Type=RelativeToParent, Property=Height}"                    
+                      >
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="17*" />
+                    <RowDefinition Height="10*" />
+                </Grid.RowDefinitions>
+
+                 <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="31*" />
+                  <ColumnDefinition Width="50*" />
+                  <ColumnDefinition Width="19*" />
+                </Grid.ColumnDefinitions>
+
+               <StackLayout>
+                    <Image Source="apes.png" HorizontalOptions="Start" Margin="0 , 15 ,0, 0" WidthRequest="90"
+                        />
+               </StackLayout>
+
+                 
+                 
+                <Image Grid.Row="0" Grid.Column="1" Source="visalogo2.png" />
+
+                
+              
+
+             </Grid>
+
+             <Grid RelativeLayout.WidthConstraint=
+                          "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                   RelativeLayout.HeightConstraint=
+                          "{ConstraintExpression Type=RelativeToParent, Property=Height}"
+                        VerticalOptions="Center"                
+                      >
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="15*" />
+                    <RowDefinition Height="8*" />
+                    <RowDefinition Height="8*" />
+                    <RowDefinition Height="5*" />                   
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2.5*" />  
+                    <ColumnDefinition Width="95*" />
+                    <ColumnDefinition Width="2.5*" />  
+                 </Grid.ColumnDefinitions>
+
+                <StackLayout Grid.Row="1" Grid.Column="1">
+                    <Label Text="Email" FontFamily="{StaticResource UbuntuFont}" TextColor="White"></Label>
+                    <Entry ></Entry>
+                </StackLayout>
+
+                 <StackLayout Grid.Row="2" Grid.Column="1">
+                    <Label Text="Password" FontFamily="{StaticResource UbuntuFont}" TextColor="White"></Label>
+                    <Entry ></Entry>
+                </StackLayout>
+
+                 <Button Grid.Row="3" Grid.Column="1" Text="LOG IN" FontFamily="{StaticResource UbuntuFont}"
+                         BackgroundColor="#151852" TextColor="White" FontSize="16" Margin="0,5,0,0" Clicked="SubmitLogin"
+                         ></Button>
+            
+              </Grid>
+
+
+          </RelativeLayout>  
+    </ContentPage.Content>
+</ContentPage>
