@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<Grid RelativeLayout.WidthConstraint=
+                "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+      xmlns="http://xamarin.com/schemas/2014/forms"
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+      x:Class="vip.Components.appNavigationHeader">
+
+    <Image Source="briologo.png" HorizontalOptions="Start" WidthRequest="90"
+                />
+    <Image Source="logo.png" HorizontalOptions="Center" Margin="0,0,10,0" WidthRequest="50" 
+                />
+
+</Grid>
+

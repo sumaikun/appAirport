@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="vip.Menu" xmlns:common="clr-namespace:vip.Components;assembly=vip"
+             BackgroundColor="#3E3E3E10">
+
+    <NavigationPage.TitleView >
+
+        
+        <common:appNavigationHeader></common:appNavigationHeader>
+
+
+    </NavigationPage.TitleView>
+
+
+    <ContentPage.Resources>
+    
+        <ResourceDictionary>
+
+          <OnPlatform x:Key="FrameMargins"
+                  x:TypeArguments="Thickness"
+                  iOS="10,15,10,10"
+                  Android="15,15,15,10"
+                  WinPhone="0"
+           ></OnPlatform>
+
+          <OnPlatform x:Key="InputIconsMargins"
+                  x:TypeArguments="Thickness"
+                  iOS="40,0,0,0"
+                  Android="40,0,0,0"
+                  WinPhone="0"
+           ></OnPlatform>
+
+        </ResourceDictionary>
+
+    </ContentPage.Resources>     
+
+ 
+    <ContentPage.Content>
+        <ScrollView>
+            
+            <StackLayout Margin="0,25,0,0" >
+
+                <Label FontFamily ="{StaticResource UbuntuFont}" TextColor="Black"
+                           Text="Sala: No seleccionada" x:Name="loungeInf" HorizontalTextAlignment="Center" />
+
+                <Frame Margin="{StaticResource  FrameMargins}" Padding="0" HasShadow="False">
+                    <Frame.GestureRecognizers>
+                       <TapGestureRecognizer Tapped="goToQr" NumberOfTapsRequired="1" />
+                    </Frame.GestureRecognizers>
+                    <AbsoluteLayout  HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand">
+                        <StackLayout  Orientation="Horizontal" Padding="10,0,0,0" HeightRequest="65">
+                            <Image Source="phone.png" WidthRequest="40" ></Image>
+                            <BoxView  WidthRequest="1.5" Margin="10,0,0,0"  Color="#3E3E3E10"/>
+                        </StackLayout>                        
+                        
+                        <StackLayout  Orientation="Horizontal"  AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Label FontFamily ="{StaticResource UbuntuFont}" TextColor="Black"
+                           Text="Verificar QR" VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand"  FontSize="16" ></Label>
+                        </StackLayout>                            
+                    </AbsoluteLayout>                
+                </Frame>
+
+                <Frame Margin="{StaticResource  FrameMargins}" Padding="0" HasShadow="False" >
+                    <Frame.GestureRecognizers>
+                       <TapGestureRecognizer Tapped="goToServices" NumberOfTapsRequired="1" />
+                    </Frame.GestureRecognizers>
+                    <AbsoluteLayout Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <StackLayout Padding="10,0,0,0" HeightRequest="65" Orientation="Horizontal">
+                            <Image Source="visaList.png" WidthRequest="35" ></Image>
+                            <BoxView  WidthRequest="1.5" Margin="10,0,0,0" Color="#3E3E3E10"/>
+                        </StackLayout> 
+                        <StackLayout  Orientation="Horizontal"  AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Label FontFamily ="{StaticResource UbuntuFont}" TextColor="Black"
+                           Text="Ver salas" VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand"  FontSize="16" ></Label>
+                        </StackLayout>                            
+                    </AbsoluteLayout>                
+                </Frame>
+
+                <Frame Margin="{StaticResource  FrameMargins}" Padding="0" HasShadow="False">
+                    <Frame.GestureRecognizers>
+                       <TapGestureRecognizer Tapped="giveBackServices" NumberOfTapsRequired="1" />
+                    </Frame.GestureRecognizers>
+                    <AbsoluteLayout Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <StackLayout Padding="10,0,0,0" HeightRequest="65" Orientation="Horizontal">
+                            <Image Source="cardPhone.png" WidthRequest="35" ></Image>
+                            <BoxView  WidthRequest="1.5" Margin="10,0,0,0" Color="#3E3E3E10"/>
+                        </StackLayout>                
+                        <StackLayout  Orientation="Horizontal"  AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Label FontFamily ="{StaticResource UbuntuFont}" TextColor="Black"
+                           Text="Regresar servicio" VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand"  FontSize="16" ></Label>
+                        </StackLayout>                            
+                    </AbsoluteLayout>
+                </Frame>
+
+                <Frame Margin="{StaticResource  FrameMargins}" Padding="0" HasShadow="False">
+                    <Frame.GestureRecognizers>
+                       <TapGestureRecognizer Tapped="signOut" NumberOfTapsRequired="1" />
+                    </Frame.GestureRecognizers>
+                    <AbsoluteLayout Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <StackLayout Padding="10,0,0,0" HeightRequest="65" Orientation="Horizontal">
+                           <Image Source="padlock.png" WidthRequest="40" ></Image>
+                            <BoxView  WidthRequest="1.5" Margin="10,0,0,0"  Color="#3E3E3E10"/>
+                        </StackLayout>                                       
+                        <StackLayout  Orientation="Horizontal"  AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Label FontFamily ="{StaticResource UbuntuFont}" TextColor="Black"
+                           Text="Cerrar Sesión" VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand"  FontSize="16" ></Label>
+                        </StackLayout>                            
+                    </AbsoluteLayout>                
+                </Frame>
+
+                   <ActivityIndicator RelativeLayout.WidthConstraint=
+                          "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                        RelativeLayout.HeightConstraint=
+                          "{ConstraintExpression Type=RelativeToParent, Property=Height}"
+             Color="#151852" HorizontalOptions="Center" IsRunning="false" x:Name="loading"   />
+
+            </StackLayout>
+
+
+        </ScrollView>
+        
+    </ContentPage.Content>
+</ContentPage>

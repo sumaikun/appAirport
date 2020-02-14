@@ -3,14 +3,13 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 
-namespace vip
+namespace vip.Components
 {
-    public partial class Services : ContentPage
+    public partial class appNavigationHeader:Grid 
     {
-        public Services()
+        public appNavigationHeader()
         {
             InitializeComponent();
-            NavigationPage.SetHasBackButton(this,false);
         }
     }
 }

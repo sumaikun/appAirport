@@ -34,7 +34,7 @@
                 </Grid.ColumnDefinitions>
 
                <StackLayout>
-                    <Image Source="apes.png" HorizontalOptions="Start" Margin="0 , 15 ,0, 0" WidthRequest="90"
+                    <Image Source="briologo.png" HorizontalOptions="Start" Margin="10 , 15 ,0, 0" WidthRequest="90"
                         />
                </StackLayout>
 
@@ -46,6 +46,15 @@
               
 
              </Grid>
+
+
+            <ActivityIndicator RelativeLayout.WidthConstraint=
+                          "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                        RelativeLayout.HeightConstraint=
+                          "{ConstraintExpression Type=RelativeToParent, Property=Height}"
+             Color="#151852" HorizontalOptions="Center" IsRunning="false" x:Name="loading"   />
+
+
 
              <Grid RelativeLayout.WidthConstraint=
                           "{ConstraintExpression Type=RelativeToParent, Property=Width}"
@@ -68,17 +77,18 @@
                  </Grid.ColumnDefinitions>
 
                 <StackLayout Grid.Row="1" Grid.Column="1">
-                    <Label Text="Email" FontFamily="{StaticResource UbuntuFont}" TextColor="White"></Label>
-                    <Entry ></Entry>
+                    <Label Text="Username" FontFamily="{StaticResource UbuntuFont}"  TextColor="White"></Label>
+                    <Entry x:Name="username" Keyboard="Email" ></Entry>
                 </StackLayout>
 
                  <StackLayout Grid.Row="2" Grid.Column="1">
-                    <Label Text="Password" FontFamily="{StaticResource UbuntuFont}" TextColor="White"></Label>
-                    <Entry ></Entry>
+                    <Label  Text="Password" FontFamily="{StaticResource UbuntuFont}" TextColor="White"></Label>
+                    <Entry IsPassword="True" Completed="SubmitByKey"  x:Name="password" ></Entry>
                 </StackLayout>
 
                  <Button Grid.Row="3" Grid.Column="1" Text="LOG IN" FontFamily="{StaticResource UbuntuFont}"
-                         BackgroundColor="#151852" TextColor="White" FontSize="16" Margin="0,5,0,0" Clicked="SubmitLogin"
+                         BackgroundColor="#151852" x:Name="loginButton" TextColor="White" FontSize="16" Margin="0,5,0,0"
+                         Clicked="SubmitLogin"
                          ></Button>
             
               </Grid>

@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rxui:ReactiveContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="vip.Rooms"
+             xmlns:local="clr-namespace:vip"
+             xmlns:rxui="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
+             xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:TypeArguments="local:RoomsViewModel"
+             xmlns:common="clr-namespace:vip.Components;assembly=vip" >
+
+    <NavigationPage.TitleView >
+
+        <common:appNavigationHeader></common:appNavigationHeader>
+
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+         
+        <Grid RelativeLayout.WidthConstraint=
+                          "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+              RelativeLayout.HeightConstraint=
+                        "{ConstraintExpression Type=RelativeToParent, Property=Height}"                    
+                      >
+            <Grid.RowDefinitions>
+                    <RowDefinition Height="100" />
+                    <RowDefinition Height="87*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+ 
+            </Grid.ColumnDefinitions>
+            
+            <StackLayout Grid.Row="0" StyleClass="test" Padding="20,20,20,20" BackgroundColor="#D9D9D9">            
+                <Label Text="Buscar:" FontFamily="{StaticResource UbuntuFont}" TextColor="#151852"></Label>
+                <RelativeLayout >
+                     <Image  Source="ic_search.png" WidthRequest="30" />
+                     <Entry RelativeLayout.WidthConstraint="{ConstraintExpression
+                        Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
+                        Text="{Binding FilterText}" x:Name="filterEntry" Keyboard="Email"
+                        Completed="{Binding FilterCommand}"
+                     ></Entry>                   
+                </RelativeLayout>
+                 
+            </StackLayout>
+
+              <ActivityIndicator RelativeLayout.WidthConstraint=
+                          "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                        RelativeLayout.HeightConstraint=
+                          "{ConstraintExpression Type=RelativeToParent, Property=Height}"
+             Color="#151852" HorizontalOptions="Center" IsRunning="{Binding Loading}"  x:Name="loading"   />
+                    
+            <ScrollView Grid.Row="1"  BackgroundColor="#F3F3F3" IsVisible="{Binding  !Loading}" >
+                
+
+                    <ListView x:Name="MyListView"
+                        ItemsSource="{Binding Rooms}"
+                        SelectedItem="{Binding SelectedRoom}"
+                        CachingStrategy="RecycleElement"
+                        HasUnevenRows="true">
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                
+                                <ViewCell>
+
+                                    <StackLayout BackgroundColor="#FFFFFF"  >
+
+                                        <Frame BorderColor="#F3F3F3" HasShadow="False" OutlineColor="White"  >
+                                            <StackLayout>
+                                                <Label Text="{Binding title}" FontFamily="{StaticResource UbuntuFont}"
+                                                       TextColor="#EDC36B" ></Label>
+                                                <ff:CachedImage Source="{Binding picture}"  />
+                                                <Label FontFamily="{StaticResource UbuntuFont}" Text="{Binding description}"></Label>                            
+                                            </StackLayout>
+                                        </Frame>
+
+                                        <StackLayout>
+                                            <BoxView HeightRequest="2.5"
+                                             HorizontalOptions="FillAndExpand"
+                                             VerticalOptions="EndAndExpand"
+                                             Color="#F3F3F3" />
+                                        </StackLayout>
+
+                                    </StackLayout>
+
+
+                                </ViewCell>
+                                
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+
+
+            </ScrollView>
+
+          
+
+        </Grid>
+
+
+            
+    </ContentPage.Content>
+</rxui:ReactiveContentPage>
+
+
+<!--
+
+    <Frame BorderColor="#F3F3F3" HasShadow="False" OutlineColor="White">
+                        <StackLayout>
+                            <Label Text="Fantasía vegana" FontFamily="{StaticResource UbuntuFont}"
+                                   TextColor="#EDC36B" ></Label>
+                            <Image Source="veguiee.png"/>
+                            <Label FontFamily="{StaticResource UbuntuFont}" Text="Delicios vegetales en salsa de champiñones"></Label>
+                        </StackLayout>
+                    </Frame>
+
+                    <StackLayout>
+                        <BoxView HeightRequest="2.5"
+                         HorizontalOptions="FillAndExpand"
+                         VerticalOptions="EndAndExpand"
+                         Color="#F3F3F3" />
+                    </StackLayout>
+
+                    <Frame BorderColor="#F3F3F3" HasShadow="False" OutlineColor="White">
+                        <StackLayout>
+                            <Label Text="Precio especial suit" FontFamily="{StaticResource UbuntuFont}"
+                                   TextColor="#EDC36B" ></Label>
+                            <Image Source="room.png"/>
+                            <Label FontFamily="{StaticResource UbuntuFont}" Text="Hotel El Cairo: 8:00 -12:00"></Label>
+                        </StackLayout>
+                    </Frame>
+
+                    <StackLayout>
+                        <BoxView HeightRequest="2.5"
+                         HorizontalOptions="FillAndExpand"
+                         VerticalOptions="EndAndExpand"
+                         Color="#F3F3F3" />
+                    </StackLayout>
+
+                    <Frame BorderColor="#F3F3F3" HasShadow="False" OutlineColor="White">
+                        <StackLayout>
+                            <Label Text="Fantasía vegana" FontFamily="{StaticResource UbuntuFont}"
+                                   TextColor="#EDC36B" ></Label>
+                            <Image Source="veguiee.png"/>
+                            <Label FontFamily="{StaticResource UbuntuFont}" Text="Delicios vegetales en salsa de champiñones"></Label>
+                        </StackLayout>
+                    </Frame>
+
+
+
+
+-->
